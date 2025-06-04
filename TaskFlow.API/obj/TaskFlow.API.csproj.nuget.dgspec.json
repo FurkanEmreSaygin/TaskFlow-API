@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.APi\\TaskFlow.API.csproj": {}
+    "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.APi\\TaskFlow.API.csproj": {
+    "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.APi\\TaskFlow.API.csproj",
+        "projectUniqueName": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj",
         "projectName": "TaskFlow.API",
-        "projectPath": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.APi\\TaskFlow.API.csproj",
+        "projectPath": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj",
         "packagesPath": "C:\\Users\\furky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.APi\\obj\\",
+        "outputPath": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\furky\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -55,6 +55,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[8.1.4, )"
             }
           },
           "imports": [

@@ -88,3 +88,6 @@ C:\Users\furky\Desktop\Acun\TaskFlow-API\TaskFlow.APi\obj\Debug\net9.0\refint\Ta
 C:\Users\furky\Desktop\Acun\TaskFlow-API\TaskFlow.APi\obj\Debug\net9.0\TaskFlow.API.pdb
 C:\Users\furky\Desktop\Acun\TaskFlow-API\TaskFlow.APi\obj\Debug\net9.0\TaskFlow.API.genruntimeconfig.cache
 C:\Users\furky\Desktop\Acun\TaskFlow-API\TaskFlow.APi\obj\Debug\net9.0\ref\TaskFlow.API.dll
+C:\Users\furky\Desktop\Acun\TaskFlow-API\TaskFlow.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\furky\Desktop\Acun\TaskFlow-API\TaskFlow.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\furky\Desktop\Acun\TaskFlow-API\TaskFlow.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
