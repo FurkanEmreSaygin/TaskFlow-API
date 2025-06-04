@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using TaskFlow.Business.DTOs;
 using TaskFlow.Business.Interfaces;
 using TaskFlow.Entities;
 
@@ -22,23 +23,24 @@ namespace TaskFlow.API.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] User user)
+        public async Task<IActionResult> Register([FromBody] RegisterRequestDto request)
         {
-            var result = await _authService.RegisterAsync(user);
-            if (!result)
+            var result = await _authService.RegisterAsync(request);
+            if (result == null)
                 return BadRequest("User already exists");
 
-            return Ok("User registered successfully");
+            return Ok(result);
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] User user)
+        public async Task<IActionResult> Login([FromBody] LoginRequestDto request)
         {
-            var result = await _authService.LoginAsync(user.Email, user.PasswordHash);
-            if (!result)
+            var result = await _authService.LoginAsync(request);
+            if (result == null)
                 return Unauthorized("Invalid credentials");
 
-            return Ok("Login successful");
+            return Ok(result);
         }
+
     }
 }
