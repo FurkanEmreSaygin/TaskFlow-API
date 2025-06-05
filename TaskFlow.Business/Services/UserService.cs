@@ -16,11 +16,13 @@ namespace TaskFlow.Business.Services
         public async Task AddAsync(User user)
         {
             await _userRepository.AddAsync(user);
+            await _userRepository.SaveChangesAsync();
         }
 
         public void Delete(User user)
         {
             _userRepository.Delete(user);
+            _userRepository.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<User>> GetAllAsync()
@@ -41,6 +43,7 @@ namespace TaskFlow.Business.Services
         public void Update(User user)
         {
             _userRepository.Update(user);
+            _userRepository.SaveChangesAsync();
         }
     }
 }

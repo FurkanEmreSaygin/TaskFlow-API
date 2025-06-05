@@ -43,5 +43,10 @@ namespace TaskFlow.DataAccess.Repositories
         {
             _repo.Gorevler.Remove(gorev);
         }
+
+        public async Task SaveChangesAsync()
+        {
+            await _repo.SaveChangesAsync();
+        }
     }
 }

@@ -47,5 +47,10 @@ namespace TaskFlow.DataAccess.Repositories
         {
             _repo.Users.Remove(user);
         }
+
+        public async Task SaveChangesAsync()
+        {
+            await _repo.SaveChangesAsync();
+        }
     }
 }

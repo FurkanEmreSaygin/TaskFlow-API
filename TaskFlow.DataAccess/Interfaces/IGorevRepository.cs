@@ -14,5 +14,6 @@ namespace TaskFlow.DataAccess.Interfaces
         Task AddAsync(Gorev gorev);
         void Update(Gorev gorev);
         void Delete(Gorev gorev);
+        Task SaveChangesAsync();
     }
 }

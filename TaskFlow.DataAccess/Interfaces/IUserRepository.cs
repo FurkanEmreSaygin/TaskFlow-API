@@ -14,5 +14,6 @@ namespace TaskFlow.DataAccess.Interfaces
         Task AddAsync(User user);
         void Update(User user);
         void Delete(User user);
+        Task SaveChangesAsync();
     }
 }

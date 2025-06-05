@@ -1,3 +1,4 @@
+using TaskFlow.Business.DTOs;
 using TaskFlow.Business.Interfaces;
 using TaskFlow.DataAccess.Interfaces;
 using TaskFlow.Entities;
@@ -13,14 +14,22 @@ namespace TaskFlow.Business.Services
             _gorevRepository = gorevRepository;
         }
 
-        public async Task AddAsync(Gorev gorev)
+        private static GorevDto MapToDto(Gorev gorev)
         {
-            await _gorevRepository.AddAsync(gorev);
+            return new GorevDto
+            {
+                Id = gorev.Id,
+                Baslik = gorev.Baslik,
+                Aciklama = gorev.Aciklama,
+                Tarih = gorev.Tarih,
+                TamamlandiMi = gorev.TamamlandiMi
+            };
         }
 
-        public void Delete(Gorev gorev)
+        public async Task<GorevDto?> GetByIdAsync(int id)
         {
-            _gorevRepository.Delete(gorev);
+            var gorev = await _gorevRepository.GetByIdAsync(id);
+            return gorev == null ? null : MapToDto(gorev);
         }
 
         public async Task<IEnumerable<Gorev>> GetAllAsync()
@@ -28,19 +37,47 @@ namespace TaskFlow.Business.Services
             return await _gorevRepository.GetAllAsync();
         }
 
-        public async Task<Gorev?> GetByIdAsync(int id)
+        public async Task<IEnumerable<GorevDto>> GetByUserIdAsync(int userId)
+        {
+            var gorevler = await _gorevRepository.GetByUserIdAsync(userId);
+            return gorevler.Select(MapToDto);
+        }
+
+        public async Task<Gorev?> GetEntityByIdAsync(int id)
         {
             return await _gorevRepository.GetByIdAsync(id);
         }
 
-        public async Task<IEnumerable<Gorev>> GetByUserIdAsync(int userId)
+        public async Task AddAsync(GorevAddDto dto)
         {
-            return await _gorevRepository.GetByUserIdAsync(userId);
-        }
+            var entity = new Gorev
+            {
+                Baslik = dto.Baslik,
+                Aciklama = dto.Aciklama,
+                Tarih = dto.Tarih,
+                TamamlandiMi = dto.TamamlandiMi,
+                UserId = dto.UserId
+            };
 
-        public void Update(Gorev gorev)
+            await _gorevRepository.AddAsync(entity);
+            await _gorevRepository.SaveChangesAsync();
+        }
+        public async Task<bool> UpdateAsync(int id, GorevUpdateDto dto)
         {
+            var gorev = await _gorevRepository.GetByIdAsync(id);
+            if (gorev == null)
+                return false;
+
+            gorev.Baslik = dto.Baslik;
+            gorev.Aciklama = dto.Aciklama;
+            gorev.TamamlandiMi = dto.TamamlandiMi;
             _gorevRepository.Update(gorev);
+            await _gorevRepository.SaveChangesAsync();
+            return true;
+        }
+        public void Delete(Gorev gorev)
+        {
+            _gorevRepository.Delete(gorev);
         }
     }
 }
