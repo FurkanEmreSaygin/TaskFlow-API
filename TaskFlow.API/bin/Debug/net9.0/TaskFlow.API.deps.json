@@ -1069,7 +1069,7 @@
         },
         "runtime": {
           "TaskFlow.Business.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1082,7 +1082,7 @@
         },
         "runtime": {
           "TaskFlow.DataAccess.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1090,7 +1090,7 @@
       "TaskFlow.Entities/1.0.0": {
         "runtime": {
           "TaskFlow.Entities.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
