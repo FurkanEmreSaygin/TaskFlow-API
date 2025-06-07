@@ -20,7 +20,7 @@ namespace TaskFlow.DataAccess.Repositories
 
         public async Task<User?> GetByIdAsync(int id)
         {
-            return await _repo.Users.FindAsync(id);
+            return await _repo.Users.Include(u => u.Gorevler).FirstOrDefaultAsync(u => u.Id == id);
         }
 
         public async Task<User?> GetByEmailAsync(string email)
@@ -30,7 +30,7 @@ namespace TaskFlow.DataAccess.Repositories
 
         public async Task<IEnumerable<User>> GetAllAsync()
         {
-            return await _repo.Users.ToListAsync();
+            return await _repo.Users.Include(u => u.Gorevler).ToListAsync();
         }
 
         public async Task AddAsync(User user)

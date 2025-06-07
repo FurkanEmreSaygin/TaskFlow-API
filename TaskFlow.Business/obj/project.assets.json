@@ -2786,11 +2786,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.Business\\TaskFlow.Business.csproj",
+      "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.Business\\TaskFlow.Business.csproj",
       "projectName": "TaskFlow.Business",
-      "projectPath": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.Business\\TaskFlow.Business.csproj",
+      "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.Business\\TaskFlow.Business.csproj",
       "packagesPath": "C:\\Users\\furky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.Business\\obj\\",
+      "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\furky\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2805,8 +2805,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.DataAccess\\TaskFlow.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\furky\\Desktop\\Acun\\TaskFlow-API\\TaskFlow.DataAccess\\TaskFlow.DataAccess.csproj"
+            "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.DataAccess\\TaskFlow.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.DataAccess\\TaskFlow.DataAccess.csproj"
             }
           }
         }
@@ -2821,7 +2821,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -2842,7 +2842,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

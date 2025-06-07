@@ -1,3 +1,4 @@
+using TaskFlow.Business.DTOs;
 using TaskFlow.Business.Interfaces;
 using TaskFlow.DataAccess.Interfaces;
 using TaskFlow.Entities;
@@ -7,7 +8,22 @@ namespace TaskFlow.Business.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-
+        private static UserDto MapToDto(User user)
+        {
+            return new UserDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                Gorevler = user.Gorevler.Select(g => new GorevDto
+                {
+                    Id = g.Id,
+                    Baslik = g.Baslik,
+                    Aciklama = g.Aciklama,
+                    Tarih = g.Tarih,
+                    TamamlandiMi = g.TamamlandiMi
+                }).ToList()
+            };
+        }
         public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
@@ -25,19 +41,33 @@ namespace TaskFlow.Business.Services
             _userRepository.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync()
+        public async Task<IEnumerable<UserDto>> GetAllAsync()
         {
-            return await _userRepository.GetAllAsync();
+            var users = await _userRepository.GetAllAsync();
+            return users.Select(user => new UserDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                Gorevler = user.Gorevler.Select(g => new GorevDto
+                {
+                    Id = g.Id,
+                    Baslik = g.Baslik,
+                    Aciklama = g.Aciklama,
+                    Tarih = g.Tarih,
+                    TamamlandiMi = g.TamamlandiMi
+                }).ToList()
+            });
         }
 
-        public async Task<User?> GetByEmailAsync(string email)
+        public async Task<UserDto?> GetByEmailAsync(string email)
         {
-            return await _userRepository.GetByEmailAsync(email);
+            var user = await _userRepository.GetByEmailAsync(email);
+            return user == null ? null : MapToDto(user);
         }
-
-        public async Task<User?> GetByIdAsync(int id)
+        public async Task<UserDto?> GetByIdAsync(int id)
         {
-            return await _userRepository.GetByIdAsync(id);
+            var user = await _userRepository.GetByIdAsync(id);
+            return user == null ? null : MapToDto(user);
         }
 
         public void Update(User user)
