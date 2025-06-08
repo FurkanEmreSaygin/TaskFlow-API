@@ -1,7 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using TaskFlow.Business.DTOs;
 using TaskFlow.Business.Interfaces;
 using TaskFlow.DataAccess.Interfaces;
@@ -19,10 +24,12 @@ namespace TaskFlow.Business.Services
                 Email = user.Email
             };
         }
+        private readonly IConfiguration _config;
         private readonly IUserRepository _userRepository;
 
-        public AuthService(IUserRepository userRepository)
+        public AuthService(IUserRepository userRepository, IConfiguration config)
         {
+            _config = config;
             _userRepository = userRepository;
         }
 
@@ -42,13 +49,37 @@ namespace TaskFlow.Business.Services
             return MapToDto(user);
         }
 
+        private string GenerateJwtToken(User user)
+        {
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Email, user.Email)
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: _config["Jwt:Issuer"],
+                audience: _config["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(Convert.ToDouble(_config["Jwt:ExpireMinutes"])),
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
         public async Task<UserDto?> LoginAsync(LoginRequestDto request)
         {
             var user = await _userRepository.GetByEmailAsync(request.Email);
             if (user == null || user.PasswordHash != request.Password)
                 return null;
 
-            return MapToDto(user);
+            var dto = MapToDto(user);
+            dto.Token = GenerateJwtToken(user); // token'ı UserDto'ya koy
+
+            return dto;
         }
     }
 }

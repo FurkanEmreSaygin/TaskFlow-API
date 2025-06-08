@@ -4908,11 +4908,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\Taskflow.Api\\TaskFlow.API.csproj",
+      "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.api\\TaskFlow.API.csproj",
       "projectName": "TaskFlow.API",
-      "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\Taskflow.Api\\TaskFlow.API.csproj",
+      "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.api\\TaskFlow.API.csproj",
       "packagesPath": "C:\\Users\\furky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\Taskflow.Api\\obj\\",
+      "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\furky\\AppData\\Roaming\\NuGet\\NuGet.Config"

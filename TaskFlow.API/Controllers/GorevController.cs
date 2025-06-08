@@ -1,3 +1,5 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskFlow.Business.DTOs;
 using TaskFlow.Business.Interfaces;
@@ -23,6 +25,7 @@ namespace TaskFlow.API.Controllers
             return Ok(gorevler);
         }
 
+
         [HttpGet("detail/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -33,11 +36,25 @@ namespace TaskFlow.API.Controllers
             return Ok(gorev);
         }
 
+        [Authorize]
+        [HttpGet("me")]
+        public async Task<IActionResult> GetMyTasks()
+        {
+            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            var gorevler = await _service.GetByUserIdAsync(userId);
+            return Ok(gorevler);
+        }
+
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] GorevAddDto dto)
         {
+            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            dto.UserId = userId;
+
             await _service.AddAsync(dto);
-            return Ok("Görev oluşturuldu.");
+            return Ok("Görev eklendi.");
         }
 
         [HttpPut("{id}")]

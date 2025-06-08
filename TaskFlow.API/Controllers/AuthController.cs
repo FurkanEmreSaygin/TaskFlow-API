@@ -16,7 +16,6 @@ namespace TaskFlow.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
-
         public AuthController(IAuthService authService)
         {
             _authService = authService;
@@ -37,8 +36,7 @@ namespace TaskFlow.API.Controllers
         {
             var result = await _authService.LoginAsync(request);
             if (result == null)
-                return Unauthorized("Invalid credentials");
-
+                return Unauthorized("Geçersiz giriş");
             return Ok(result);
         }
 

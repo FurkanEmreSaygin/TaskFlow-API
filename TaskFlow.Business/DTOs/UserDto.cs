@@ -10,5 +10,6 @@ namespace TaskFlow.Business.DTOs
         public int Id { get; set; }
         public string Email { get; set; } = null!;
         public List<GorevDto> Gorevler { get; set; } = new();
+        public string? Token { get; set; }
     }
 }
