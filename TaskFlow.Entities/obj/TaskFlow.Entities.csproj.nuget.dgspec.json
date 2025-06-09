@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.Entities\\TaskFlow.Entities.csproj": {}
+    "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Entities\\TaskFlow.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.Entities\\TaskFlow.Entities.csproj": {
+    "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Entities\\TaskFlow.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.Entities\\TaskFlow.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Entities\\TaskFlow.Entities.csproj",
         "projectName": "TaskFlow.Entities",
-        "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.Entities\\TaskFlow.Entities.csproj",
+        "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Entities\\TaskFlow.Entities.csproj",
         "packagesPath": "C:\\Users\\furky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\Taskflow-Api\\TaskFlow.Entities\\obj\\",
+        "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\furky\\AppData\\Roaming\\NuGet\\NuGet.Config"

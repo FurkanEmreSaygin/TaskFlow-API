@@ -79,5 +79,34 @@ namespace TaskFlow.Business.Services
         {
             _gorevRepository.Delete(gorev);
         }
+
+        public async Task<bool> UpdateByOwnerAsync(int id, GorevUpdateDto dto, int userId)
+        {
+            var gorev = await _gorevRepository.GetByIdAsync(id);
+            if (gorev == null || gorev.UserId != userId)
+            {
+                return false;
+            }
+            gorev.Baslik = dto.Baslik;
+            gorev.Aciklama = dto.Aciklama;
+            gorev.TamamlandiMi = dto.TamamlandiMi;
+
+            _gorevRepository.Update(gorev);
+            await _gorevRepository.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteByOwnerAsync(int id, int userId)
+        {
+            var gorev = await _gorevRepository.GetByIdAsync(id);
+            if (gorev == null || gorev.UserId != userId)
+            {
+                return false;
+            }
+
+            _gorevRepository.Delete(gorev);
+            await _gorevRepository.SaveChangesAsync();
+            return true;
+        }
     }
 }

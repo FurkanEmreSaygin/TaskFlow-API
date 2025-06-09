@@ -18,6 +18,7 @@ namespace TaskFlow.API.Controllers
             _service = service;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetAll(int userId)
         {
@@ -25,7 +26,7 @@ namespace TaskFlow.API.Controllers
             return Ok(gorevler);
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet("detail/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -57,24 +58,24 @@ namespace TaskFlow.API.Controllers
             return Ok("Görev eklendi.");
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] GorevUpdateDto dto)
         {
-            var success = await _service.UpdateAsync(id, dto);
-            if (!success)
-                return NotFound("Görev bulunamadı.");
-
+            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            var updated = await _service.UpdateByOwnerAsync(id, dto, userId);
+            if (!updated)
+                return NotFound("Görev bulunamadı veya güncelleme yetkiniz yok.");
             return Ok("Görev güncellendi.");
         }
-
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var gorev = await _service.GetEntityByIdAsync(id);
-            if (gorev == null)
-                return NotFound("Görev bulunamadı.");
-
-            _service.Delete(gorev);
+            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            var deleted = await _service.DeleteByOwnerAsync(id, userId);
+            if (!deleted)
+                return NotFound("Görev bulunamadı veya silme yetkiniz yok.");
             return Ok("Görev silindi.");
         }
     }

@@ -15,6 +15,8 @@ namespace TaskFlow.Business.Interfaces
         Task<Gorev?> GetEntityByIdAsync(int id);
         Task AddAsync(GorevAddDto gorev);
         Task<bool> UpdateAsync(int id, GorevUpdateDto dto);
+        Task<bool> UpdateByOwnerAsync(int id, GorevUpdateDto dto, int userId);
+        Task<bool> DeleteByOwnerAsync(int id, int userId);
         void Delete(Gorev gorev);
     }
 }
