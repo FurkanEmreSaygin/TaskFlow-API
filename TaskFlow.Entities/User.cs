@@ -11,5 +11,6 @@ namespace TaskFlow.Entities
         public string Email { get; set; } = null!;
         public string PasswordHash { get; set; } = null!;
         public ICollection<Gorev> Gorevler { get; set; } = new List<Gorev>();
+        public UserRole Role { get; set; } = UserRole.User;
     }
 }

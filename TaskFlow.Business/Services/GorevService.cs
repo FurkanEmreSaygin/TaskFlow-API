@@ -74,10 +74,12 @@ namespace TaskFlow.Business.Services
             _gorevRepository.Update(gorev);
             await _gorevRepository.SaveChangesAsync();
             return true;
+            // şu an aktif değil
         }
         public void Delete(Gorev gorev)
         {
             _gorevRepository.Delete(gorev);
+            _gorevRepository.SaveChangesAsync();
         }
 
         public async Task<bool> UpdateByOwnerAsync(int id, GorevUpdateDto dto, int userId)

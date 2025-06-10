@@ -4908,11 +4908,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Api\\TaskFlow.API.csproj",
+      "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj",
       "projectName": "TaskFlow.API",
-      "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Api\\TaskFlow.API.csproj",
+      "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj",
       "packagesPath": "C:\\Users\\furky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Api\\obj\\",
+      "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\furky\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4927,8 +4927,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Business\\TaskFlow.Business.csproj": {
-              "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-Api\\TaskFlow.Business\\TaskFlow.Business.csproj"
+            "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.Business\\TaskFlow.Business.csproj": {
+              "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.Business\\TaskFlow.Business.csproj"
             }
           }
         }

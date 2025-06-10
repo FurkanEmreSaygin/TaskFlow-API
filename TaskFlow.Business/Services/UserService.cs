@@ -14,6 +14,7 @@ namespace TaskFlow.Business.Services
             {
                 Id = user.Id,
                 Email = user.Email,
+                Role = user.Role,
                 Gorevler = user.Gorevler.Select(g => new GorevDto
                 {
                     Id = g.Id,
@@ -48,6 +49,7 @@ namespace TaskFlow.Business.Services
             {
                 Id = user.Id,
                 Email = user.Email,
+                Role = user.Role,
                 Gorevler = user.Gorevler.Select(g => new GorevDto
                 {
                     Id = g.Id,

@@ -21,7 +21,8 @@ namespace TaskFlow.Business.Services
             return new UserDto
             {
                 Id = user.Id,
-                Email = user.Email
+                Email = user.Email,
+                Role = user.Role
             };
         }
         private readonly IConfiguration _config;
@@ -41,7 +42,8 @@ namespace TaskFlow.Business.Services
             var user = new User
             {
                 Email = request.Email,
-                PasswordHash = request.Password
+                PasswordHash = request.Password,
+                Role = request.Role
             };
 
             await _userRepository.AddAsync(user);
@@ -54,6 +56,7 @@ namespace TaskFlow.Business.Services
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Role, user.Role.ToString()),
                 new Claim(ClaimTypes.Email, user.Email)
             };
 
