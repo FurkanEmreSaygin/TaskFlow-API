@@ -17,7 +17,6 @@ namespace TaskFlow.Business.DTOs
         public DateTime Tarih { get; set; } = DateTime.Now;
         public bool TamamlandiMi { get; set; } = false;
 
-        [Required(ErrorMessage = "Kullanıcı ID'si zorunludur.")]
         [Range(1, int.MaxValue, ErrorMessage = "Geçerli bir kullanıcı ID'si giriniz.")]
         public int UserId { get; set; }
     }

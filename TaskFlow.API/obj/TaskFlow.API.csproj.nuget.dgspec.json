@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj": {}
+    "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.Api\\TaskFlow.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj": {
+    "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.Api\\TaskFlow.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj",
+        "projectUniqueName": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.Api\\TaskFlow.API.csproj",
         "projectName": "TaskFlow.API",
-        "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.API\\TaskFlow.API.csproj",
+        "projectPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.Api\\TaskFlow.API.csproj",
         "packagesPath": "C:\\Users\\furky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.API\\obj\\",
+        "outputPath": "C:\\Users\\furky\\Desktop\\TaskFlow\\TaskFlow-API\\TaskFlow.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\furky\\AppData\\Roaming\\NuGet\\NuGet.Config"
