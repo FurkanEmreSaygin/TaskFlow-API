@@ -14,7 +14,7 @@ Projede kimlik doğrulama (JWT), yetkilendirme (Role-based), kullanıcıya özel
 - Role Bazlı Yetkilendirme (`Admin`, `User`)
 - Kullanıcıya özel görev işlemleri (`Create`, `Read`, `Update`, `Delete`)
 - Admin paneli: tüm kullanıcıların görevlerini listeleme
-- DTO kullanımı ve AutoMapper
+- DTO kullanımı
 - Swagger UI ile test desteği
 
 ---
@@ -24,7 +24,6 @@ Projede kimlik doğrulama (JWT), yetkilendirme (Role-based), kullanıcıya özel
 - .NET 8 Web API
 - Entity Framework Core
 - SQL Server
-- AutoMapper
 - Swagger
 - JWT Authentication
 
