@@ -30,13 +30,6 @@ Projede kimlik doğrulama (JWT), yetkilendirme (Role-based), kullanıcıya özel
 
 ---
 
-## 🔐 JWT Token
-
-Giriş sonrası access token döner.  
-Token, Swagger’daki “Authorize” kısmına `"eyJ..."` şeklinde girilerek kullanılabilir.
-
----
-
 ## 📂 Proje Yapısı
 
 - `Entities` – Entity sınıfları (User, Gorev)
@@ -81,6 +74,8 @@ Token, Swagger’daki “Authorize” kısmına `"eyJ..."` şeklinde girilerek k
 
    dotnet run
 
+---
+
 ## 🔐 JWT Kullanımı
 
 Kullanıcı /api/auth/login ile giriş yapar ve JWT token alır.
@@ -88,10 +83,14 @@ Bu token, Swagger arayüzünde Authorize kısmına şu formatla girilmelidir:
 
 "eyJhbGciOi..."
 
+---
+
 ## 🛡️ Notlar
 
 appsettings.json içindeki Jwt:Key ve DefaultConnection bilgileri güvenlik nedeniyle örnek bırakılmıştır.
 Her geliştirici kendi veritabanı bağlantısını ve token key’ini sağlamalıdır.
+
+---
 
 ## 👤 Geliştirici
 
