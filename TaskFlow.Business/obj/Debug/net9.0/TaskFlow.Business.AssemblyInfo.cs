@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskFlow.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+beebeb0a75b99681ede603c991b28103453f7ee8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca6ae21fb1e94419a9b760297ac137afa27fdd6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskFlow.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskFlow.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
