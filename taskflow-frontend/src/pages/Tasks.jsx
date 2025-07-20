@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { tasksAPI } from '../api/tasks';
-import AddTask from './AddTask'; // Bu satır kritik
+import AddTask from './AddTask';
 import TaskCard from '../components/TaskCard';
 
 export default function Tasks() {

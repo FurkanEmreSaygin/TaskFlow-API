@@ -47,14 +47,48 @@ Token, Swagger’daki “Authorize” kısmına `"Bearer eyJ..."` şeklinde giri
 
 ---
 
-## 🧪 Swagger Test
+## ⚙️ İlk Kurulum
 
-1. `/api/auth/register` ile kullanıcı kaydı
-2. `/api/auth/login` ile token al
-3. Token’ı `Authorize` kısmına gir
-4. `/api/gorev` işlemlerini test et
+1. Projeyi klonla:
 
----
+   git clone https://github.com/FurkanEmreSaygin/TaskFlow-API.git
+   cd TaskFlow-API
+
+2. Appsettings.json içinde JWT anahtarı ve veritabanı bağlantı cümlesi ekle
+
+   "Jwt": {
+   "Key": "mySuperSecretKey123!",
+   "Issuer": "TaskFlowAPI",
+   "Audience": "TaskFlowUsers",
+   "ExpirationMinutes": 60
+   },
+   "ConnectionStrings": {
+   "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=TaskFlowDb;Trusted_Connection=True;"
+   }
+
+3. NuGet paketlerini yükle
+
+   dotnet restore
+
+4. Veritabanını oluştur
+
+   dotnet ef database update
+
+5. Uygulamayı başlat
+
+   dotnet run
+
+## 🔐 JWT Kullanımı
+
+Kullanıcı /api/auth/login ile giriş yapar ve JWT token alır.
+Bu token, Swagger arayüzünde Authorize kısmına şu formatla girilmelidir:
+
+"eyJhbGciOi..."
+
+## 🛡️ Notlar
+
+appsettings.json içindeki Jwt:Key ve DefaultConnection bilgileri güvenlik nedeniyle örnek bırakılmıştır.
+Her geliştirici kendi veritabanı bağlantısını ve token key’ini sağlamalıdır.
 
 ## 👤 Geliştirici
 
