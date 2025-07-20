@@ -62,9 +62,11 @@ Token, Swagger’daki “Authorize” kısmına `"eyJ..."` şeklinde girilerek k
    "Audience": "TaskFlowUsers",
    "ExpirationMinutes": 60
    },
+
    "ConnectionStrings": {
    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=TaskFlowDb;Trusted_Connection=True;"
    }
+
    ⚠️ JWT `Key` değeri en az 16 karakter uzunluğunda olmalıdır.
 
 3. NuGet paketlerini yükle
